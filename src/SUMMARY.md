@@ -1,6 +1,5 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
 - [Introduction and Goals](./01_introduction_and_goals.md)
 - [Architecture Constraints](./02_architecture_constraints.md)
 - [System Scope and Context](./03_system_scope_and_context.md)
