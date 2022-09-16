@@ -1,0 +1,9 @@
+[book]
+authors = ["Christian Krudewig"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Architecture Documentation Template"
+
+[build]
+build-dir = "html"
