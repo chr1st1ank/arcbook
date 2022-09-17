@@ -7,3 +7,24 @@ title = "Architecture Documentation Template"
 
 [build]
 build-dir = "html"
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+renderer = ["html"]
+
+[output.html]
+default-theme = "rust" # light, ayu, rust, coal, navy
+preferred-dark-theme = "rust"
+git-repository-url = "https://github.com/chr1st1ank/arcbook"
+additional-js = [
+    "node_modules/d3/dist/d3.min.js",
+    "node_modules/mermaid/dist/mermaid.min.js",
+    "js/mermaid-init.js",
+    "js/mermaid-zoom.js",
+]
+
+# # Uncomment to enable PDF output:
+# # (Install mdbook-pdf first)
+# [output.html.print]
+# enable = true
+# [output.pdf]

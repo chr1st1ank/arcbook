@@ -1,0 +1,7 @@
+{
+    "dependencies": {
+        "d3": "^7.6.1",
+        "mermaid": "^9.1.7",
+        "svg-pan-zoom": "^3.6.1"
+    }
+}
