@@ -1,15 +1,15 @@
-# Cross-cutting Concepts {#section-concepts}
+# Cross-cutting Concepts
 
-## *\<Concept 1>* {#__emphasis_concept_1_emphasis}
+## *\<Concept 1>*
 
 *\<explanation>*
 
-## *\<Concept 2>* {#__emphasis_concept_2_emphasis}
+## *\<Concept 2>*
 
 *\<explanation>*
 
 ...
 
-## *\<Concept n>* {#__emphasis_concept_n_emphasis}
+## *\<Concept n>*
 
 *\<explanation>*

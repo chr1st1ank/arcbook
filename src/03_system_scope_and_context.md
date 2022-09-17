@@ -1,12 +1,12 @@
-# System Scope and Context {#section-system-scope-and-context}
+# System Scope and Context
 
-## Business Context {#_business_context}
+## Business Context
 
 **\<Diagram or Table>**
 
 **\<optionally: Explanation of external domain interfaces>**
 
-## Technical Context {#_technical_context}
+## Technical Context
 
 
 ```mermaid
