@@ -1,5 +1,9 @@
 # Deployment View
 
+> Software needs hardware to execute on, that’s where the deployment view comes into play: It shows the technical infrastructure with environments, computers, processors, networks and network-topologies. In addition, it maps the software building blocks to those infrastructure elements.
+> 
+> https://docs.arc42.org/section-7/
+
 ## Infrastructure Level 1
 
 ***Overview Diagram***
