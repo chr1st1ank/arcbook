@@ -22,7 +22,7 @@ jobs:
         with:
           mdbook-version: 'latest'
 
-      - run: apt-get install -y plantuml 
+      - run: sudo apt-get install -y plantuml 
 
       - run: cargo install mdbook-mermaid mdbook-plantuml
 
