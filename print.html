@@ -181,7 +181,7 @@ https://docs.arc42.org/section-1/</p>
 Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 1 (Current path is /home/runner/work/arcbook/arcbook/.
 Cannot include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 Preprocessor Error: Cannot include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-Error line 1 in file: /tmp/.tmpjVhZLq/c997db6be8f4288e3cb07ba001c7896da067c587.puml
+Error line 1 in file: /tmp/.tmpMCFZvW/c997db6be8f4288e3cb07ba001c7896da067c587.puml
 Some diagram description contains errors
 ).).</p>
 <p><strong>optionally: Explanation of external domain interfaces</strong></p>
@@ -208,7 +208,19 @@ Some diagram description contains errors
 <p><strong>optionally: Explanation of technical interfaces</strong></p>
 <p><strong>Mapping Input/Output to Channels</strong></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="solution-strategy"><a class="header" href="#solution-strategy">Solution Strategy</a></h1>
+<blockquote>
+<p>Summary of the fundamental decisions and solution strategies that shape the architecture: can include technology, top-level decomposition, approaches to achieve top quality goals and relevant organizational decisions.</p>
+<p>https://docs.arc42.org/section-4/</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="building-block-view"><a class="header" href="#building-block-view">Building Block View</a></h1>
+<blockquote>
+<p>Usually, boxes and arrows, showing the high-level code structure of the system. To phrase it a little more formal: The building block view explains the static structure of the system and contains, abstractions of source-code. It refines the context view, where the complete system is depicted as a black box.</p>
+<ul>
+<li>Level 1 contains the major subsystems, components or parts of the system. In some cases, this coarse overview provides enough structural overview.</li>
+<li>Level 2 refines one or more elements from level 1: Create a separate white box (plus explanations) for every level-1 building block you would like to explain in detail.</li>
+</ul>
+<p>https://docs.arc42.org/section-5/</p>
+</blockquote>
 <h2 id="whitebox-overall-system"><a class="header" href="#whitebox-overall-system">Whitebox Overall System</a></h2>
 <p><em><strong>Overview Diagram</strong></em></p>
 <p>Motivation</p>
@@ -239,14 +251,11 @@ Some diagram description contains errors
 <p>...</p>
 <h3 id="white-box-building-block-m"><a class="header" href="#white-box-building-block-m">White Box <em>building block m</em></a></h3>
 <p><em>white box template</em></p>
-<h2 id="level-3"><a class="header" href="#level-3">Level 3</a></h2>
-<h3 id="white-box-_building-block-x1_"><a class="header" href="#white-box-_building-block-x1_">White Box _building block x.1_\</a></h3>
-<p><em>white box template</em></p>
-<h3 id="white-box-_building-block-x2_"><a class="header" href="#white-box-_building-block-x2_">White Box _building block x.2_\</a></h3>
-<p><em>white box template</em></p>
-<h3 id="white-box-_building-block-y1_"><a class="header" href="#white-box-_building-block-y1_">White Box _building block y.1_\</a></h3>
-<p><em>white box template</em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="runtime-view"><a class="header" href="#runtime-view">Runtime View</a></h1>
+<blockquote>
+<p>The runtime view explains the behavior or processing of one or several building blocks. It serves as companion to the static building block view from section 5 above. The runtime view might explain important use cases or features, interactions at critical external interfaces, error and exception behavior.</p>
+<p>https://docs.arc42.org/section-6/</p>
+</blockquote>
 <h2 id="runtime-scenario-1"><a class="header" href="#runtime-scenario-1">Runtime Scenario 1</a></h2>
 <ul>
 <li>
@@ -261,6 +270,10 @@ between the building block instances depicted in this diagram.&gt;</em></p>
 <h2 id=""><a class="header" href="#">...</a></h2>
 <h2 id="runtime-scenario-n"><a class="header" href="#runtime-scenario-n">Runtime Scenario n</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="deployment-view"><a class="header" href="#deployment-view">Deployment View</a></h1>
+<blockquote>
+<p>Software needs hardware to execute on, that’s where the deployment view comes into play: It shows the technical infrastructure with environments, computers, processors, networks and network-topologies. In addition, it maps the software building blocks to those infrastructure elements.</p>
+<p>https://docs.arc42.org/section-7/</p>
+</blockquote>
 <h2 id="infrastructure-level-1"><a class="header" href="#infrastructure-level-1">Infrastructure Level 1</a></h2>
 <p><em><strong>Overview Diagram</strong></em></p>
 <p>Motivation</p>
@@ -278,6 +291,16 @@ between the building block instances depicted in this diagram.&gt;</em></p>
 <h3 id="infrastructure-element-n"><a class="header" href="#infrastructure-element-n"><em>Infrastructure Element n</em></a></h3>
 <p><em>diagram + explanation</em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cross-cutting-concepts"><a class="header" href="#cross-cutting-concepts">Cross-cutting Concepts</a></h1>
+<blockquote>
+<p>Overall, principal regulations and solution approaches relevant in multiple parts (→ cross-cutting) of the system. Concepts are often related to multiple building blocks. Include different topics like </p>
+<ul>
+<li>domain models</li>
+<li>architecture patterns and -styles</li>
+<li>rules for using specific technology and </li>
+<li>implementation rules.</li>
+</ul>
+<p>https://docs.arc42.org/section-8/</p>
+</blockquote>
 <h2 id="concept-1"><a class="header" href="#concept-1"><em>Concept 1</em></a></h2>
 <p><em>explanation</em></p>
 <h2 id="concept-2"><a class="header" href="#concept-2"><em>Concept 2</em></a></h2>
@@ -287,9 +310,17 @@ between the building block instances depicted in this diagram.&gt;</em></p>
 <p><em>explanation</em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="architecture-decisions"><a class="header" href="#architecture-decisions">Architecture Decisions</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="quality-requirements"><a class="header" href="#quality-requirements">Quality Requirements</a></h1>
+<blockquote>
+<p>Quality requirements, often described as scenarios. You may use a quality tree to provide a high-level overview. The most important quality goals should have been already described in section 1.2. (quality).</p>
+<p>https://docs.arc42.org/section-10/</p>
+</blockquote>
 <h2 id="quality-tree"><a class="header" href="#quality-tree">Quality Tree</a></h2>
 <h2 id="quality-scenarios"><a class="header" href="#quality-scenarios">Quality Scenarios</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="risks-and-technical-debts"><a class="header" href="#risks-and-technical-debts">Risks and Technical Debts</a></h1>
+<blockquote>
+<p>Known technical risks or technical debt. What potential problems exist within or around the system? What does the development team feel miserable about.</p>
+<p>https://docs.arc42.org/section-11/</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="glossary"><a class="header" href="#glossary">Glossary</a></h1>
 <div class="table-wrapper"><table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody>
 <tr><td><em>Term-1&gt;</em></td><td><em>&lt;definition-1</em></td></tr>
