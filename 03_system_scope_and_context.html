@@ -137,15 +137,36 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="system-scope-and-context-section-system-scope-and-context"><a class="header" href="#system-scope-and-context-section-system-scope-and-context">System Scope and Context {#section-system-scope-and-context}</a></h1>
-<h2 id="business-context-_business_context"><a class="header" href="#business-context-_business_context">Business Context {#_business_context}</a></h2>
-<p><strong>&lt;Diagram or Table&gt;</strong></p>
-<p><strong>&lt;optionally: Explanation of external domain interfaces&gt;</strong></p>
-<h2 id="technical-context-_technical_context"><a class="header" href="#technical-context-_technical_context">Technical Context {#_technical_context}</a></h2>
+                        <h1 id="system-scope-and-context"><a class="header" href="#system-scope-and-context">System Scope and Context</a></h1>
+<blockquote>
+<p>The context which delimits the system from its (external) communication partners (neighboring systems and users). It specifies or documents the external interfaces. You should always document the context from a business or domain perspective. If infrastructure or specific hardware plays an important role, you might also show a technical perspective.</p>
+</blockquote>
+<h2 id="business-context"><a class="header" href="#business-context">Business Context</a></h2>
+<p><strong>Diagram or Table</strong></p>
 <pre class="mermaid">C4Context
-  title Machine Learning Solution
+  title Machine Learning Solution Context (Mermaid)
+  
   Person(client1, &quot;First User&quot;)
   Person(client2, &quot;Second User&quot;)
+  System(system, &quot;ML System&quot;)
+
+  Rel(client1, system, &quot;API call&quot;)
+  Rel(client2, system, &quot;API call&quot;)
+</pre>
+<p>PlantUML rendering error:
+Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 1 (Current path is /home/runner/work/arcbook/arcbook/.
+Cannot include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+Preprocessor Error: Cannot include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+Error line 1 in file: /tmp/.tmpjVhZLq/c997db6be8f4288e3cb07ba001c7896da067c587.puml
+Some diagram description contains errors
+).).</p>
+<p><strong>optionally: Explanation of external domain interfaces</strong></p>
+<h2 id="technical-context"><a class="header" href="#technical-context">Technical Context</a></h2>
+<pre class="mermaid">C4Context
+  title Machine Learning Solution
+  System_Ext(client1, &quot;Webshop Frontend&quot;)
+  System_Ext(client2, &quot;Demo UI&quot;)
+
   Container_Boundary(system, &quot;ML System&quot;) {
     System(api, &quot;Model serving API&quot;)
     System(train, &quot;Model Training&quot;)
@@ -153,24 +174,15 @@
   }
   SystemDb_Ext(db, &quot;Ordering system DB&quot;)
 
-  BiRel(client1, api, &quot;API call&quot;)
-  BiRel(client2, api, &quot;API call&quot;)
+  Rel(client1, api, &quot;API call&quot;)
+  Rel(client2, api, &quot;API call&quot;)
   Rel(train, api, &quot;model&quot;)
   Rel(ingestion, train, &quot;data&quot;)
   Rel(ingestion, db, &quot;fetch data&quot;)
 </pre>
-<pre class="mermaid">stateDiagram-v2
-    [*] --&gt; Still
-    Still --&gt; [*]
-    Still --&gt; Moving
-    Moving --&gt; Still
-    Moving --&gt; Crash
-    Crash --&gt; [*]
-            
-</pre>
-<p><strong>&lt;Diagram or Table&gt;</strong></p>
-<p><strong>&lt;optionally: Explanation of technical interfaces&gt;</strong></p>
-<p><strong>&lt;Mapping Input/Output to Channels&gt;</strong></p>
+<p><strong>Diagram or Table</strong></p>
+<p><strong>optionally: Explanation of technical interfaces</strong></p>
+<p><strong>Mapping Input/Output to Channels</strong></p>
 
                     </main>
 

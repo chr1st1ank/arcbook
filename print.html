@@ -138,27 +138,59 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="introduction-and-goals-section-introduction-and-goals"><a class="header" href="#introduction-and-goals-section-introduction-and-goals">Introduction and Goals {#section-introduction-and-goals}</a></h1>
-<h2 id="requirements-overview-_requirements_overview"><a class="header" href="#requirements-overview-_requirements_overview">Requirements Overview {#_requirements_overview}</a></h2>
-<h2 id="quality-goals-_quality_goals"><a class="header" href="#quality-goals-_quality_goals">Quality Goals {#_quality_goals}</a></h2>
-<h2 id="stakeholders-_stakeholders"><a class="header" href="#stakeholders-_stakeholders">Stakeholders {#_stakeholders}</a></h2>
-<p>+-------------+---------------------------+---------------------------+
-| Role/Name   | Contact                   | Expectations              |
-+=============+===========================+===========================+
-| <em>&lt;Role-1&gt;</em> | <em>&lt;Contact-1&gt;</em>            | <em>&lt;Expectation-1&gt;</em>        |
-+-------------+---------------------------+---------------------------+
-| <em>&lt;Role-2&gt;</em> | <em>&lt;Contact-2&gt;</em>            | <em>&lt;Expectation-2&gt;</em>        |
-+-------------+---------------------------+---------------------------+</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture-constraints-section-architecture-constraints"><a class="header" href="#architecture-constraints-section-architecture-constraints">Architecture Constraints {#section-architecture-constraints}</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="system-scope-and-context-section-system-scope-and-context"><a class="header" href="#system-scope-and-context-section-system-scope-and-context">System Scope and Context {#section-system-scope-and-context}</a></h1>
-<h2 id="business-context-_business_context"><a class="header" href="#business-context-_business_context">Business Context {#_business_context}</a></h2>
-<p><strong>&lt;Diagram or Table&gt;</strong></p>
-<p><strong>&lt;optionally: Explanation of external domain interfaces&gt;</strong></p>
-<h2 id="technical-context-_technical_context"><a class="header" href="#technical-context-_technical_context">Technical Context {#_technical_context}</a></h2>
+                        <h1 id="introduction-and-goals"><a class="header" href="#introduction-and-goals">Introduction and Goals</a></h1>
+<blockquote>
+<p>Short description of the requirements and driving forces of your system: You should provide an extract or abstract of requirements. Restrict yourself to the top three (max five) quality requirements for the architecture, which have the highest priority for the major stakeholders.</p>
+<p>Include a table of important stakeholders with their expectation regarding architecture or documentation.
+https://docs.arc42.org/section-1/</p>
+</blockquote>
+<h2 id="requirements-overview"><a class="header" href="#requirements-overview">Requirements Overview</a></h2>
+<h2 id="quality-goals"><a class="header" href="#quality-goals">Quality Goals</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Goal</th><th>Description</th></tr></thead><tbody>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="stakeholders"><a class="header" href="#stakeholders">Stakeholders</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Role/Name</th><th>Contact</th><th>Expectations</th></tr></thead><tbody>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="architecture-constraints"><a class="header" href="#architecture-constraints">Architecture Constraints</a></h1>
+<blockquote>
+<p>Anything that constrains teams in design and implementation decisions, or decision about related processes. Constraints can sometimes go beyond individual systems and might valid for whole organizations and companies (e.g. company-wide technology choices or government regulations). Time and money are common constraints in many organizations.</p>
+<p>See https://docs.arc42.org/section-2/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="system-scope-and-context"><a class="header" href="#system-scope-and-context">System Scope and Context</a></h1>
+<blockquote>
+<p>The context which delimits the system from its (external) communication partners (neighboring systems and users). It specifies or documents the external interfaces. You should always document the context from a business or domain perspective. If infrastructure or specific hardware plays an important role, you might also show a technical perspective.</p>
+</blockquote>
+<h2 id="business-context"><a class="header" href="#business-context">Business Context</a></h2>
+<p><strong>Diagram or Table</strong></p>
 <pre class="mermaid">C4Context
-  title Machine Learning Solution
+  title Machine Learning Solution Context (Mermaid)
+  
   Person(client1, &quot;First User&quot;)
   Person(client2, &quot;Second User&quot;)
+  System(system, &quot;ML System&quot;)
+
+  Rel(client1, system, &quot;API call&quot;)
+  Rel(client2, system, &quot;API call&quot;)
+</pre>
+<p>PlantUML rendering error:
+Failed to render inline diagram (Failed to generate PlantUML diagrams, PlantUML exited with code 1 (Current path is /home/runner/work/arcbook/arcbook/.
+Cannot include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+Preprocessor Error: Cannot include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+Error line 1 in file: /tmp/.tmpjVhZLq/c997db6be8f4288e3cb07ba001c7896da067c587.puml
+Some diagram description contains errors
+).).</p>
+<p><strong>optionally: Explanation of external domain interfaces</strong></p>
+<h2 id="technical-context"><a class="header" href="#technical-context">Technical Context</a></h2>
+<pre class="mermaid">C4Context
+  title Machine Learning Solution
+  System_Ext(client1, &quot;Webshop Frontend&quot;)
+  System_Ext(client2, &quot;Demo UI&quot;)
+
   Container_Boundary(system, &quot;ML System&quot;) {
     System(api, &quot;Model serving API&quot;)
     System(train, &quot;Model Training&quot;)
@@ -166,116 +198,104 @@
   }
   SystemDb_Ext(db, &quot;Ordering system DB&quot;)
 
-  BiRel(client1, api, &quot;API call&quot;)
-  BiRel(client2, api, &quot;API call&quot;)
+  Rel(client1, api, &quot;API call&quot;)
+  Rel(client2, api, &quot;API call&quot;)
   Rel(train, api, &quot;model&quot;)
   Rel(ingestion, train, &quot;data&quot;)
   Rel(ingestion, db, &quot;fetch data&quot;)
 </pre>
-<pre class="mermaid">stateDiagram-v2
-    [*] --&gt; Still
-    Still --&gt; [*]
-    Still --&gt; Moving
-    Moving --&gt; Still
-    Moving --&gt; Crash
-    Crash --&gt; [*]
-            
-</pre>
-<p><strong>&lt;Diagram or Table&gt;</strong></p>
-<p><strong>&lt;optionally: Explanation of technical interfaces&gt;</strong></p>
-<p><strong>&lt;Mapping Input/Output to Channels&gt;</strong></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="solution-strategy-section-solution-strategy"><a class="header" href="#solution-strategy-section-solution-strategy">Solution Strategy {#section-solution-strategy}</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="building-block-view-section-building-block-view"><a class="header" href="#building-block-view-section-building-block-view">Building Block View {#section-building-block-view}</a></h1>
-<h2 id="whitebox-overall-system-_whitebox_overall_system"><a class="header" href="#whitebox-overall-system-_whitebox_overall_system">Whitebox Overall System {#_whitebox_overall_system}</a></h2>
-<p><em><strong>&lt;Overview Diagram&gt;</strong></em></p>
+<p><strong>Diagram or Table</strong></p>
+<p><strong>optionally: Explanation of technical interfaces</strong></p>
+<p><strong>Mapping Input/Output to Channels</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="solution-strategy"><a class="header" href="#solution-strategy">Solution Strategy</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="building-block-view"><a class="header" href="#building-block-view">Building Block View</a></h1>
+<h2 id="whitebox-overall-system"><a class="header" href="#whitebox-overall-system">Whitebox Overall System</a></h2>
+<p><em><strong>Overview Diagram</strong></em></p>
 <p>Motivation</p>
-<p>:   <em>&lt;text explanation&gt;</em></p>
+<p>:   <em>text explanation</em></p>
 <p>Contained Building Blocks</p>
-<p>:   <em>&lt;Description of contained building block (black boxes)&gt;</em></p>
+<p>:   <em>Description of contained building block (black boxes)</em></p>
 <p>Important Interfaces</p>
-<p>:   <em>&lt;Description of important interfaces&gt;</em></p>
-<h3 id="name-black-box-1-__name_black_box_1"><a class="header" href="#name-black-box-1-__name_black_box_1">&lt;Name black box 1&gt; {#__name_black_box_1}</a></h3>
-<p><em>&lt;Purpose/Responsibility&gt;</em></p>
-<p><em>&lt;Interface(s)&gt;</em></p>
-<p><em>&lt;(Optional) Quality/Performance Characteristics&gt;</em></p>
-<p><em>&lt;(Optional) Directory/File Location&gt;</em></p>
-<p><em>&lt;(Optional) Fulfilled Requirements&gt;</em></p>
-<p><em>&lt;(optional) Open Issues/Problems/Risks&gt;</em></p>
-<h3 id="name-black-box-2-__name_black_box_2"><a class="header" href="#name-black-box-2-__name_black_box_2">&lt;Name black box 2&gt; {#__name_black_box_2}</a></h3>
-<p><em>&lt;black box template&gt;</em></p>
-<h3 id="name-black-box-n-__name_black_box_n"><a class="header" href="#name-black-box-n-__name_black_box_n">&lt;Name black box n&gt; {#__name_black_box_n}</a></h3>
-<p><em>&lt;black box template&gt;</em></p>
-<h3 id="name-interface-1-__name_interface_1"><a class="header" href="#name-interface-1-__name_interface_1">&lt;Name interface 1&gt; {#__name_interface_1}</a></h3>
+<p>:   <em>Description of important interfaces</em></p>
+<h3 id="name-black-box-1"><a class="header" href="#name-black-box-1">Name black box 1</a></h3>
+<p><em>Purpose/Responsibility</em></p>
+<p><em>Interface(s)</em></p>
+<p><em>(Optional) Quality/Performance Characteristics</em></p>
+<p><em>(Optional) Directory/File Location</em></p>
+<p><em>(Optional) Fulfilled Requirements</em></p>
+<p><em>(optional) Open Issues/Problems/Risks</em></p>
+<h3 id="name-black-box-2"><a class="header" href="#name-black-box-2">Name black box 2</a></h3>
+<p><em>black box template</em></p>
+<h3 id="name-black-box-n"><a class="header" href="#name-black-box-n">Name black box n</a></h3>
+<p><em>black box template</em></p>
+<h3 id="name-interface-1"><a class="header" href="#name-interface-1">Name interface 1</a></h3>
 <p>...</p>
-<h3 id="name-interface-m-__name_interface_m"><a class="header" href="#name-interface-m-__name_interface_m">&lt;Name interface m&gt; {#__name_interface_m}</a></h3>
-<h2 id="level-2-_level_2"><a class="header" href="#level-2-_level_2">Level 2 {#_level_2}</a></h2>
-<h3 id="white-box-building-block-1-_white_box_emphasis_building_block_1_emphasis"><a class="header" href="#white-box-building-block-1-_white_box_emphasis_building_block_1_emphasis">White Box <em>&lt;building block 1&gt;</em> {#_white_box_emphasis_building_block_1_emphasis}</a></h3>
-<p><em>&lt;white box template&gt;</em></p>
-<h3 id="white-box-building-block-2-_white_box_emphasis_building_block_2_emphasis"><a class="header" href="#white-box-building-block-2-_white_box_emphasis_building_block_2_emphasis">White Box <em>&lt;building block 2&gt;</em> {#_white_box_emphasis_building_block_2_emphasis}</a></h3>
-<p><em>&lt;white box template&gt;</em></p>
+<h3 id="name-interface-m"><a class="header" href="#name-interface-m">Name interface m</a></h3>
+<h2 id="level-2"><a class="header" href="#level-2">Level 2</a></h2>
+<h3 id="white-box-building-block-1"><a class="header" href="#white-box-building-block-1">White Box <em>building block 1</em></a></h3>
+<p><em>white box template</em></p>
+<h3 id="white-box-building-block-2"><a class="header" href="#white-box-building-block-2">White Box <em>building block 2</em></a></h3>
+<p><em>white box template</em></p>
 <p>...</p>
-<h3 id="white-box-building-block-m-_white_box_emphasis_building_block_m_emphasis"><a class="header" href="#white-box-building-block-m-_white_box_emphasis_building_block_m_emphasis">White Box <em>&lt;building block m&gt;</em> {#_white_box_emphasis_building_block_m_emphasis}</a></h3>
-<p><em>&lt;white box template&gt;</em></p>
-<h2 id="level-3-_level_3"><a class="header" href="#level-3-_level_3">Level 3 {#_level_3}</a></h2>
-<h3 id="white-box-_building-block-x1_-_white_box_building_block_x_1"><a class="header" href="#white-box-_building-block-x1_-_white_box_building_block_x_1">White Box &lt;_building block x.1_&gt; {#_white_box_building_block_x_1}</a></h3>
-<p><em>&lt;white box template&gt;</em></p>
-<h3 id="white-box-_building-block-x2_-_white_box_building_block_x_2"><a class="header" href="#white-box-_building-block-x2_-_white_box_building_block_x_2">White Box &lt;_building block x.2_&gt; {#_white_box_building_block_x_2}</a></h3>
-<p><em>&lt;white box template&gt;</em></p>
-<h3 id="white-box-_building-block-y1_-_white_box_building_block_y_1"><a class="header" href="#white-box-_building-block-y1_-_white_box_building_block_y_1">White Box &lt;_building block y.1_&gt; {#_white_box_building_block_y_1}</a></h3>
-<p><em>&lt;white box template&gt;</em></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="runtime-view-section-runtime-view"><a class="header" href="#runtime-view-section-runtime-view">Runtime View {#section-runtime-view}</a></h1>
-<h2 id="runtime-scenario-1-__runtime_scenario_1"><a class="header" href="#runtime-scenario-1-__runtime_scenario_1">&lt;Runtime Scenario 1&gt; {#__runtime_scenario_1}</a></h2>
+<h3 id="white-box-building-block-m"><a class="header" href="#white-box-building-block-m">White Box <em>building block m</em></a></h3>
+<p><em>white box template</em></p>
+<h2 id="level-3"><a class="header" href="#level-3">Level 3</a></h2>
+<h3 id="white-box-_building-block-x1_"><a class="header" href="#white-box-_building-block-x1_">White Box _building block x.1_\</a></h3>
+<p><em>white box template</em></p>
+<h3 id="white-box-_building-block-x2_"><a class="header" href="#white-box-_building-block-x2_">White Box _building block x.2_\</a></h3>
+<p><em>white box template</em></p>
+<h3 id="white-box-_building-block-y1_"><a class="header" href="#white-box-_building-block-y1_">White Box _building block y.1_\</a></h3>
+<p><em>white box template</em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="runtime-view"><a class="header" href="#runtime-view">Runtime View</a></h1>
+<h2 id="runtime-scenario-1"><a class="header" href="#runtime-scenario-1">Runtime Scenario 1</a></h2>
 <ul>
 <li>
-<p><em>&lt;insert runtime diagram or textual description of the scenario&gt;</em></p>
+<p><em>insert runtime diagram or textual description of the scenario</em></p>
 </li>
 <li>
 <p><em>&lt;insert description of the notable aspects of the interactions
 between the building block instances depicted in this diagram.&gt;</em></p>
 </li>
 </ul>
-<h2 id="runtime-scenario-2-__runtime_scenario_2"><a class="header" href="#runtime-scenario-2-__runtime_scenario_2">&lt;Runtime Scenario 2&gt; {#__runtime_scenario_2}</a></h2>
-<h2 id="-_"><a class="header" href="#-_">... {#_}</a></h2>
-<h2 id="runtime-scenario-n-__runtime_scenario_n"><a class="header" href="#runtime-scenario-n-__runtime_scenario_n">&lt;Runtime Scenario n&gt; {#__runtime_scenario_n}</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="deployment-view-section-deployment-view"><a class="header" href="#deployment-view-section-deployment-view">Deployment View {#section-deployment-view}</a></h1>
-<h2 id="infrastructure-level-1-_infrastructure_level_1"><a class="header" href="#infrastructure-level-1-_infrastructure_level_1">Infrastructure Level 1 {#_infrastructure_level_1}</a></h2>
-<p><em><strong>&lt;Overview Diagram&gt;</strong></em></p>
+<h2 id="runtime-scenario-2"><a class="header" href="#runtime-scenario-2">Runtime Scenario 2</a></h2>
+<h2 id=""><a class="header" href="#">...</a></h2>
+<h2 id="runtime-scenario-n"><a class="header" href="#runtime-scenario-n">Runtime Scenario n</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="deployment-view"><a class="header" href="#deployment-view">Deployment View</a></h1>
+<h2 id="infrastructure-level-1"><a class="header" href="#infrastructure-level-1">Infrastructure Level 1</a></h2>
+<p><em><strong>Overview Diagram</strong></em></p>
 <p>Motivation</p>
-<p>:   <em>&lt;explanation in text form&gt;</em></p>
+<p>:   <em>explanation in text form</em></p>
 <p>Quality and/or Performance Features</p>
-<p>:   <em>&lt;explanation in text form&gt;</em></p>
+<p>:   <em>explanation in text form</em></p>
 <p>Mapping of Building Blocks to Infrastructure</p>
-<p>:   <em>&lt;description of the mapping&gt;</em></p>
-<h2 id="infrastructure-level-2-_infrastructure_level_2"><a class="header" href="#infrastructure-level-2-_infrastructure_level_2">Infrastructure Level 2 {#_infrastructure_level_2}</a></h2>
-<h3 id="infrastructure-element-1-__emphasis_infrastructure_element_1_emphasis"><a class="header" href="#infrastructure-element-1-__emphasis_infrastructure_element_1_emphasis"><em>&lt;Infrastructure Element 1&gt;</em> {#__emphasis_infrastructure_element_1_emphasis}</a></h3>
-<p><em>&lt;diagram + explanation&gt;</em></p>
-<h3 id="infrastructure-element-2-__emphasis_infrastructure_element_2_emphasis"><a class="header" href="#infrastructure-element-2-__emphasis_infrastructure_element_2_emphasis"><em>&lt;Infrastructure Element 2&gt;</em> {#__emphasis_infrastructure_element_2_emphasis}</a></h3>
-<p><em>&lt;diagram + explanation&gt;</em></p>
+<p>:   <em>description of the mapping</em></p>
+<h2 id="infrastructure-level-2"><a class="header" href="#infrastructure-level-2">Infrastructure Level 2</a></h2>
+<h3 id="infrastructure-element-1"><a class="header" href="#infrastructure-element-1"><em>Infrastructure Element 1</em></a></h3>
+<p><em>diagram + explanation</em></p>
+<h3 id="infrastructure-element-2"><a class="header" href="#infrastructure-element-2"><em>Infrastructure Element 2</em></a></h3>
+<p><em>diagram + explanation</em></p>
 <p>...</p>
-<h3 id="infrastructure-element-n-__emphasis_infrastructure_element_n_emphasis"><a class="header" href="#infrastructure-element-n-__emphasis_infrastructure_element_n_emphasis"><em>&lt;Infrastructure Element n&gt;</em> {#__emphasis_infrastructure_element_n_emphasis}</a></h3>
-<p><em>&lt;diagram + explanation&gt;</em></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="cross-cutting-concepts-section-concepts"><a class="header" href="#cross-cutting-concepts-section-concepts">Cross-cutting Concepts {#section-concepts}</a></h1>
-<h2 id="concept-1-__emphasis_concept_1_emphasis"><a class="header" href="#concept-1-__emphasis_concept_1_emphasis"><em>&lt;Concept 1&gt;</em> {#__emphasis_concept_1_emphasis}</a></h2>
-<p><em>&lt;explanation&gt;</em></p>
-<h2 id="concept-2-__emphasis_concept_2_emphasis"><a class="header" href="#concept-2-__emphasis_concept_2_emphasis"><em>&lt;Concept 2&gt;</em> {#__emphasis_concept_2_emphasis}</a></h2>
-<p><em>&lt;explanation&gt;</em></p>
+<h3 id="infrastructure-element-n"><a class="header" href="#infrastructure-element-n"><em>Infrastructure Element n</em></a></h3>
+<p><em>diagram + explanation</em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cross-cutting-concepts"><a class="header" href="#cross-cutting-concepts">Cross-cutting Concepts</a></h1>
+<h2 id="concept-1"><a class="header" href="#concept-1"><em>Concept 1</em></a></h2>
+<p><em>explanation</em></p>
+<h2 id="concept-2"><a class="header" href="#concept-2"><em>Concept 2</em></a></h2>
+<p><em>explanation</em></p>
 <p>...</p>
-<h2 id="concept-n-__emphasis_concept_n_emphasis"><a class="header" href="#concept-n-__emphasis_concept_n_emphasis"><em>&lt;Concept n&gt;</em> {#__emphasis_concept_n_emphasis}</a></h2>
-<p><em>&lt;explanation&gt;</em></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture-decisions-section-design-decisions"><a class="header" href="#architecture-decisions-section-design-decisions">Architecture Decisions {#section-design-decisions}</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="quality-requirements-section-quality-scenarios"><a class="header" href="#quality-requirements-section-quality-scenarios">Quality Requirements {#section-quality-scenarios}</a></h1>
-<h2 id="quality-tree-_quality_tree"><a class="header" href="#quality-tree-_quality_tree">Quality Tree {#_quality_tree}</a></h2>
-<h2 id="quality-scenarios-_quality_scenarios"><a class="header" href="#quality-scenarios-_quality_scenarios">Quality Scenarios {#_quality_scenarios}</a></h2>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="risks-and-technical-debts-section-technical-risks"><a class="header" href="#risks-and-technical-debts-section-technical-risks">Risks and Technical Debts {#section-technical-risks}</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="glossary-section-glossary"><a class="header" href="#glossary-section-glossary">Glossary {#section-glossary}</a></h1>
-<p>+-----------------------+-----------------------------------------------+
-| Term                  | Definition                                    |
-+=======================+===============================================+
-| <em>&lt;Term-1&gt;</em>           | <em>&lt;definition-1&gt;</em>                             |
-+-----------------------+-----------------------------------------------+
-| <em>&lt;Term-2&gt;</em>           | <em>&lt;definition-2&gt;</em>                             |
-+-----------------------+-----------------------------------------------+</p>
-
+<h2 id="concept-n"><a class="header" href="#concept-n"><em>Concept n</em></a></h2>
+<p><em>explanation</em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture-decisions"><a class="header" href="#architecture-decisions">Architecture Decisions</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quality-requirements"><a class="header" href="#quality-requirements">Quality Requirements</a></h1>
+<h2 id="quality-tree"><a class="header" href="#quality-tree">Quality Tree</a></h2>
+<h2 id="quality-scenarios"><a class="header" href="#quality-scenarios">Quality Scenarios</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="risks-and-technical-debts"><a class="header" href="#risks-and-technical-debts">Risks and Technical Debts</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="glossary"><a class="header" href="#glossary">Glossary</a></h1>
+<div class="table-wrapper"><table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody>
+<tr><td><em>Term-1&gt;</em></td><td><em>&lt;definition-1</em></td></tr>
+<tr><td><em>Term-2&gt;</em></td><td><em>&lt;definition-2</em></td></tr>
+</tbody></table>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
