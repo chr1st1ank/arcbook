@@ -34,7 +34,7 @@ jobs:
             ~/.cargo/git/db/
           key: ${{ runner.os }}-cargo-${{ hashFiles('book.toml') }}
 
-      - run: cargo install mdbook-mermaid mdbook-plantuml
+      - run: cargo install --force mdbook-mermaid mdbook-plantuml
 
       - run: mdbook build
 
