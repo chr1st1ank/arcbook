@@ -142,8 +142,83 @@
 <p>Quality requirements, often described as scenarios. You may use a quality tree to provide a high-level overview. The most important quality goals should have been already described in section 1.2. (quality).</p>
 <p>https://docs.arc42.org/section-10/</p>
 </blockquote>
+<pre class="mermaid">%%{init: { &quot;flowchart&quot;: { &quot;curve&quot;: &quot;linear&quot;} } }%%
+graph LR
+    sys(ISO 25010 Software product quality)
+
+    sys --- suitability(Functional Suitability)
+    sys --- reliability(Reliability)
+    sys --- efficiency(Performance Efficiency)
+    sys --- useability(Useability)
+    sys --- security(Security)
+    sys --- compatibility(Compatibility)
+    sys --- maintainability(Maintainability)
+    sys --- portability(Portability)
+
+    suitability --- appropriateness(Appropriateness)
+    suitability --- correctness(Correctness)
+    suitability --- completeness(Completeness)
+
+    reliability --- availability(Availability)
+    reliability --- fault-tolerance(Fault tolerance)
+    reliability --- recoverability(Recoverability)
+
+    efficiency --- time(Time behaviour)
+    efficiency --- resource(Resource utilization)
+    efficiency --- capacity(Capacity)
+
+    useability --- recogniseability(Appropriateness recogniseability)
+    useability --- learnability(Learnability)
+    useability --- ease(Ease-of-use)
+    useability --- user-error-protection(User error protection)
+    useability --- attractiveness(Attractiveness)
+    useability --- accessibility(Technical accessibility)
+
+    security --- confidentiality(Confidentiality)
+    security --- integrity(Integrity)
+    security --- non-repudiation(Non-repudiation)
+    security --- accountability(Accountability)
+    security --- authenticity(Authenticity)
+
+    compatibility --- coexistence(Coexistence)
+    compatibility --- interoperability(Interoperability)
+
+    maintainability --- modularity(Modularity)
+    maintainability --- reuseability(Reuseability)
+    maintainability --- analyzability(Analyzability)
+    maintainability --- changeability(Changeability)
+    maintainability --- testability(Testability)
+
+    portability --- adaptability(Adaptability)
+    portability --- installability(Installability)
+    portability --- replaceability(Replaceability)
+</pre>
+<p><em>Software product quality as defined in ISO 25010.</em></p>
 <h2 id="quality-tree"><a class="header" href="#quality-tree">Quality Tree</a></h2>
+<pre class="mermaid">graph TD
+    sys(System Quality Requirements)
+
+    sys --- suitability(&quot; Functional Suitability&quot;)
+    sys --- reliability(Reliability)
+    sys --- efficiency(Performance Efficiency)
+    sys --- useability(Useability)
+    sys --- security(Security)
+    sys --- compatibility(Compatibility)
+    sys --- maintainability(Maintainability)
+    sys --- transferability(Transferability)
+
+    suitability --- acc(&quot;🎯 Accurate predictions&quot;)
+    reliability --- av(&quot;🏃‍♂️ High Availability&quot;)
+</pre>
 <h2 id="quality-scenarios"><a class="header" href="#quality-scenarios">Quality Scenarios</a></h2>
+<h3 id="accurate-predictions"><a class="header" href="#accurate-predictions">Accurate Predictions</a></h3>
+<p>Predictions on typical user data achieve an accuracy of at least 60%.</p>
+<ul>
+<li><strong>Quality Aspect</strong>: Functional Suitability</li>
+<li><strong>Trigger</strong>: </li>
+<li><strong>Reaction</strong>:</li>
+<li><strong>Result</strong>:</li>
+</ul>
 
                     </main>
 
