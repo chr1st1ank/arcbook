@@ -2,3 +2,4 @@ html
 .gitconfig
 node_modules
 local
+src/mdbook-plantuml-img
