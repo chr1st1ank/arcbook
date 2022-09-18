@@ -24,7 +24,6 @@ jobs:
 
       - run: sudo apt-get install -y plantuml 
 
-      - run: cargo install --force mdbook-mermaid mdbook-plantuml
       - name: Install mdbook-mermaid
         uses: baptiste0928/cargo-install@v1
         with:
