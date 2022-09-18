@@ -2,32 +2,32 @@
 
 ## Infrastructure Level 1
 
-***\<Overview Diagram>***
+***Overview Diagram***
 
 Motivation
 
-:   *\<explanation in text form>*
+:   *explanation in text form*
 
 Quality and/or Performance Features
 
-:   *\<explanation in text form>*
+:   *explanation in text form*
 
 Mapping of Building Blocks to Infrastructure
 
-:   *\<description of the mapping>*
+:   *description of the mapping*
 
 ## Infrastructure Level 2
 
-### *\<Infrastructure Element 1>*
+### *Infrastructure Element 1*
 
-*\<diagram + explanation>*
+*diagram + explanation*
 
-### *\<Infrastructure Element 2>*
+### *Infrastructure Element 2*
 
-*\<diagram + explanation>*
+*diagram + explanation*
 
 ...
 
-### *\<Infrastructure Element n>*
+### *Infrastructure Element n*
 
-*\<diagram + explanation>*
+*diagram + explanation*

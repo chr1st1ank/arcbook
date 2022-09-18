@@ -1,15 +1,15 @@
 # Cross-cutting Concepts
 
-## *\<Concept 1>*
+## *Concept 1*
 
-*\<explanation>*
+*explanation*
 
-## *\<Concept 2>*
+## *Concept 2*
 
-*\<explanation>*
+*explanation*
 
 ...
 
-## *\<Concept n>*
+## *Concept n*
 
-*\<explanation>*
+*explanation*
