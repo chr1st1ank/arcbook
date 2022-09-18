@@ -24,6 +24,16 @@ jobs:
 
       - run: sudo apt-get install -y plantuml 
 
+      - name: Set up cargo cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('book.toml') }}
+
       - run: cargo install mdbook-mermaid mdbook-plantuml
 
       - run: mdbook build
