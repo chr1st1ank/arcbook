@@ -5,6 +5,7 @@
 ## Business Context
 
 **Diagram or Table**
+
 ```mermaid
 C4Context
   title Machine Learning Solution Context (Mermaid)
@@ -16,9 +17,10 @@ C4Context
   Rel(client1, system, "API call")
   Rel(client2, system, "API call")
 ```
+
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include <C4/C4_Container>
 
 title Machine Learning Solution Context (PlantUML)
 
@@ -34,7 +36,6 @@ Rel(client2, system, "API call")
 **optionally: Explanation of external domain interfaces**
 
 ## Technical Context
-
 
 ```mermaid
 C4Context
