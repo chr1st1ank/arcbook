@@ -39,6 +39,3 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           no-cache: ${{ github.event_name == 'schedule' }}
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
