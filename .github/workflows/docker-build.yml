@@ -37,8 +37,7 @@ jobs:
           tags: |
             ghcr.io/chr1st1ank/arcbook/mdbook-builder:latest
           # build on feature branches, push only on main branch
-          push: true
-          # push: ${{ github.ref == 'refs/heads/main' }}
+          push: ${{ github.ref == 'refs/heads/main' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           no-cache: ${{ github.event_name == 'schedule' }}
