@@ -35,7 +35,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           # relative path to the place where source code with Dockerfile is located
-          context: ./github
+          context: ./.github
           # Note: tags has to be all lower-case
           tags: |
             ghcr.io/chr1st1ank/arcbook/mdbook-builder:latest
