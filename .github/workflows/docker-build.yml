@@ -29,6 +29,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
+
+      - name: Pull last image
+        run: |
+          docker pull ghcr.io/chr1st1ank/arcbook/mdbook-builder:latest
       
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
