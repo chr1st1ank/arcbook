@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Wait for docker build
         # Build only in template repo
-        if: ${{ ${{ github.server_url }}/${{ github.repository }} == 'https://github.com/chr1st1ank/arcbook' }}
+        if: ${{ github.server_url }}/${{ github.repository }} == 'https://github.com/chr1st1ank/arcbook'
         uses: fountainhead/action-wait-for-check@v1.0.0
         id: wait-for-build
         with:
