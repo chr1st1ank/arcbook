@@ -9,7 +9,7 @@ on:
 
 jobs:
   # Build only in template repo
-  if: ${{ ${{ github.server_url }}/${{ github.repository }} == 'https://github.com/chr1st1ank/arcbook' }}
+  if: ${{ github.server_url }}/${{ github.repository }} == 'https://github.com/chr1st1ank/arcbook'
   build-and-push-docker-image:
     name: Build Docker image and push to repositories
     runs-on: ubuntu-latest
