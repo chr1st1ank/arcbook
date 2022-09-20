@@ -8,19 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  wait-for-build:
-    name: Wait for other checks
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for docker build
-        # Build only in template repo
-        if: ${{ github.server_url }}/${{ github.repository }} == 'https://github.com/chr1st1ank/arcbook'
-        uses: fountainhead/action-wait-for-check@v1.0.0
-        id: wait-for-build
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: "build-and-push-docker-image"
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
   publish:
     runs-on: ubuntu-latest
     needs: wait-for-build
