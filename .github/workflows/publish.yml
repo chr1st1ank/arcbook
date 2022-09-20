@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait for docker build
+        # Build only in template repo
+        if: ${{ ${{ github.server_url }}/${{ github.repository }} == 'https://github.com/chr1st1ank/arcbook' }}
         uses: lewagon/wait-on-check-action@v1.0.0
         with:
           ref: master
