@@ -1,4 +1,4 @@
-name: github pages
+name: mdbook-build
 
 on:
   push:
@@ -8,32 +8,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+    container:
+      image: ghcr.io/chr1st1ank/arcbook/mdbook-builder:latest
     steps:
       - uses: actions/checkout@v2
 
       - uses: bahmutov/npm-install@v1
-      
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
-        with:
-          mdbook-version: 'latest'
-
-      - run: sudo apt-get install -y plantuml 
-
-      - name: Install mdbook-mermaid
-        uses: baptiste0928/cargo-install@v1
-        with:
-          crate: mdbook-mermaid
-
-      - name: Install mdbook-plantuml
-        uses: baptiste0928/cargo-install@v1
-        with:
-          crate: mdbook-plantuml
-
       - run: mdbook build
 
       - name: Deploy
