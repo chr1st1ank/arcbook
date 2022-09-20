@@ -8,11 +8,11 @@ on:
   pull_request:
 
 jobs:
-  # Build only in template repo
-  if: ${{ github.server_url }}/${{ github.repository }} == 'https://github.com/chr1st1ank/arcbook'
   build-and-push-docker-image:
     name: Build Docker image and push to repositories
     runs-on: ubuntu-latest
+    # Build only in template repo
+    if: ${{ github.server_url }}/${{ github.repository }} == 'https://github.com/chr1st1ank/arcbook'
 
     steps:
       - name: Checkout code
