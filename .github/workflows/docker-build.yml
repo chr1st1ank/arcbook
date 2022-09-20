@@ -1,10 +1,10 @@
 name: Docker Build and Publish
 
 on:
-  # run it on push to the default repository branch
   push:
     branches: [main]
-  # run it during pull request
+  schedule:
+    - cron: "* * * * 1"
   pull_request:
 
 jobs:
@@ -38,6 +38,7 @@ jobs:
           # push: ${{ github.ref == 'refs/heads/main' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          no-cache: ${{ github.event_name == 'schedule' }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
