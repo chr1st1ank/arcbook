@@ -24,13 +24,6 @@ jobs:
           name: 'mdbook'
           path: html
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html
-
   mdbook-publish:
     runs-on: ubuntu-latest
     needs: mdbook-build
@@ -46,13 +39,9 @@ jobs:
           name: 'mdbook'
           path: html
 
-      - name: Commit and push docs.
-        shell: bash
-        run: |
-          mv html docs
-          git switch --orphan gh_pages
-          git add -A ./docs
-          git config --global user.email "" 
-          git config --global user.name "Github Action Runner"
-          git commit -m "autogenerating docs"
-          git push --no-verify --force -u origin gh_pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
