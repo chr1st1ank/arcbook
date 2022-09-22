@@ -12,7 +12,7 @@ FROM debian:stable-slim
 
 RUN apt-get update \
     && apt-get dist-upgrade \
-    && apt-get install --no-install-recommends -y npm plantuml \
+    && apt-get install --no-install-recommends -y npm plantuml graphviz \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
