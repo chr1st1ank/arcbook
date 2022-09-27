@@ -29,6 +29,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 LABEL org.opencontainers.image.title "mdbook Builder"
-LABEL org.opencontainers.image.description "A minimal image to build mdbook books with mermaid, plantuml and javascript dependencies"
+LABEL org.opencontainers.image.description "A minimal image to build mdbook books with mermaid, plantuml, Python 3.10 and javascript dependencies"
 LABEL org.opencontainers.image.source "https://github.com/chr1st1ank/arcbook"
 LABEL org.opencontainers.image.url "https://github.com/chr1st1ank/arcbook/pkgs/container/arcbook%2Fmdbook-builder"
