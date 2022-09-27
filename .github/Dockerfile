@@ -15,7 +15,7 @@ RUN curl -L https://github.com/plantuml/plantuml/releases/download/v${PLANTUML_V
     && echo '/usr/bin/java -jar /usr/local/bin/plantuml.jar ${@}' >> /usr/local/bin/plantuml \
     && chmod a+rx /usr/local/bin/plantuml
 
-FROM debian:stable-slim
+FROM python:3.10-slim
 
 ENV LANG="en_US.UTF-8"
 
