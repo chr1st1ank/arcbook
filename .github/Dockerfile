@@ -23,7 +23,7 @@ COPY --from=builder /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=builder /usr/local/bin/plantuml* /usr/local/bin/
 
 RUN apt-get update \
-    && apt-get dist-upgrade \
+    && apt-get dist-upgrade -y \
     && apt-get install --no-install-recommends -y npm graphviz openjdk-11-jre \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
