@@ -2,10 +2,10 @@ FROM rust:slim AS builder
 
 ARG PLANTUML_VERSION="1.2022.7"
 
-RUN apt-get update \
-    && apt-get dist-upgrade \
+RUN apt-get update -y \
+    && apt-get dist-upgrade -y \
     && apt-get install --no-install-recommends -y pkg-config libkrb5-dev libssl-dev curl \
-    && apt-get clean \
+    && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN cargo install mdbook mdbook-mermaid mdbook-plantuml
@@ -22,10 +22,10 @@ ENV LANG="en_US.UTF-8"
 COPY --from=builder /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=builder /usr/local/bin/plantuml* /usr/local/bin/
 
-RUN apt-get update \
+RUN apt-get update -y \
     && apt-get dist-upgrade -y \
     && apt-get install --no-install-recommends -y npm graphviz openjdk-11-jre \
-    && apt-get clean \
+    && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
 LABEL org.opencontainers.image.title "mdbook Builder"
